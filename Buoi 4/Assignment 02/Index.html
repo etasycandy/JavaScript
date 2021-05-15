@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 02</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container stroke">
+
+        <h1>Assignment 02</h1>
+
+        <div class="whiteSmoke"></div>
+        <div class="vay weight grey">
+            <label class="titl">Số tiền vay</label>
+            <input type="number" value="100000000" id="tien-vay" min=1>
+            <label> VND</label>
+        </div>
+
+        <div class="thoi-gian-vay weight whiteSmoke">
+            <label class="titl">Thời gian vay</label>
+            <input type="number" value="12" id="time" min=1>
+            <label> Tháng</label>
+        </div>
+
+        <div class="lai weight grey">
+            <label class="titl">Lãi suất</label>
+            <input type="number" value="8" id="lai-suat" min=1>
+            <label> % năm</label>
+        </div>
+
+        <div class="ngay-giai-ngan weight whiteSmoke">
+            <label class="titl">Ngày giải ngân</label>
+            <input type="date" id="date">
+        </div>
+
+        <div class="grey weight tinh-toan">
+            <label class="titl"></label>
+            <button id="btn" onclick="tinhToan()">Tính</button>
+        </div>
+        <div class="whiteSmoke weight titl">
+            <!-- <button class="btn clear btn-outline-warning" onclick="clearr()">Clear</button> -->
+        </div>
+    </div>
+
+    <br>
+
+    <!-- result  -->
+    <div class="container">
+        <table border="1" width="100%">
+            <thead>
+                <tr class="cecece">
+                    <th colspan="2">Kỳ trả nợ</th>
+                    <th>Số gốc còn lại</th>
+                    <th>Gốc</th>
+                    <th>Lãi</th>
+                    <th>Tổng gốc + Lãi</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+                <tr>
+                    <!-- <td id="indexDate"></td>
+                    <td id="indexSTT"></td>
+                    <td id="indexMoney"></td>
+                    <td id="indexTienTra"></td>
+                    <td id="indexLaiTra"></td>
+                    <td id="indexTotal"></td> -->
+                </tr>
+            </tbody>
+            <tr class="weight cecece">
+                <td colspan="3">Tổng</td>
+
+                <td id="totalTienTra"></td>
+                <td id="totalTienLai"></td>
+                <td id="totalTotal"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
