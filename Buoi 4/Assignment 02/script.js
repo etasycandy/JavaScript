@@ -56,7 +56,7 @@ var tinhToan = function(){
     }
     
     for (let i = 1; i <= time; i++){
-        date = parseInt(date.getMonth()) + 1;
+        // date = parseInt(date.getMonth()) + 1;
         var tienLai = Math.round(moneyConLai * (lai / 100) / 12);
         moneyConLai -= tienTraHangThang; 
         if (moneyConLai < 10) {

@@ -5,7 +5,7 @@
 .stroke{
     border-style: solid;
     border-width: 2px;
-    border-color: cadetblue;
+    border-color: #e3e3e3;
 }
 .container h1{
     margin: 0 auto;
@@ -33,14 +33,14 @@
 }
 .container .tinh-toan button{
     padding: 0.2rem 2rem;
-    background-color: hotpink;
+    background-color: brown;
     font-weight: 700;
     color: white;
     font-size: 20px;
     border-radius: 12px;
 }
 .container .tinh-toan button:hover{
-    background-color: indigo;
+    background-color: #ec171d;
 }
 
 .whiteSmoke{
@@ -60,10 +60,10 @@
     text-align: center;
 }
 .container table tr th{
-    border: solid black 1px;
+    border: solid #e3e3e3 2px;
 }
 .container table tr td{
-    border: solid black 1px;
+    border: solid #e3e3e3 2px;
 }
 .container table tr th{
     padding: 0.5rem;
