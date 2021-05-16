@@ -82,7 +82,7 @@ document.getElementById("or3").innerHTML = a3 || b3;
 // row 4
 var a4 = 1;
 var b4 = 1;
- 
+
 document.getElementById("a4").innerHTML = a4;
 document.getElementById("b4").innerHTML = b4;
 // Not a
