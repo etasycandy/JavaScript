@@ -179,27 +179,33 @@ function Display() {
         }
 
         listproduct += '<td id="indexDate">' + result[i].date + '</td>';
+
         listproduct += '<td id="indexSTT">' + result[i].i + '</td>';
+
         if (result[i].moneyConLai) {
             listproduct += '<td id="indexMoney">' + formatter.format(result[i].moneyConLai) + '</td>';
         } else {
             listproduct += '<td>0</td>';
         }
+        
         if (result[i].tienTraHangThang) {
             listproduct += '<td id="indexTienTra">' + formatter.format(result[i].tienTraHangThang) + '</td>';
         } else {
             listproduct += '<td></td>';
         }
+
         if (result[i].tienLai) {
             listproduct += '<td id="indexLaiTra">' + formatter.format(result[i].tienLai) + '</td>';
         } else {
             listproduct += '<td></td>';
         }
+
         if (result[i].total) {
             listproduct += '<td id="indexTotal">' + formatter.format(result[i].total) + '</td>';
         } else {
             listproduct += '<td></td>';
         }  
+
         listproduct += '</tr>'; 
     }
     document.getElementById("list").innerHTML = listproduct;
