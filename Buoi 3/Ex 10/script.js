@@ -6,7 +6,7 @@ document.getElementById("a1").innerHTML = a1;
 document.getElementById("b1").innerHTML = b1;
 // Not a
 if (!a1 == true) {
-    document.getElementById("notA1").innerHTML = 0;
+    document.getElementById("notA1").innerHTML = 1;
 } else {
     document.getElementById("notA1").innerHTML = 0;
 }
