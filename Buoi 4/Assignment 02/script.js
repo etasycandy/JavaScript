@@ -32,19 +32,37 @@ var clearr = function(){
     window.location.reload();
 }
 
+function getM(){
+    var date = document.getElementById("date").value;
+
+    date.getMonth();
+}
+
 // Thực hiện tính toán
 var tinhToan = function(){
 
     // Xoá hết dữ liệu cũ
     clearr();
 
-    var date = document.getElementById("date").value;
+    // Dữ liệu đầu vào
+    var date = new Date(document.getElementById("date").value);
     var time = document.getElementById("time").value;
     var money = document.getElementById("tien-vay").value;
     var lai = document.getElementById("lai-suat").value;
 
+    // get lấy thông số ngày, tháng, năm.
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    var sDate = [];
+    sDate.push(day, month, year);
+
+    // xuất date "dd/mm/yyyy"
+    date = sDate.join('/');
+
     var tienTraHangThang = Math.round(money / time);
     var moneyConLai = money;
+
     for (let i = 0; i < 1; i++) {
         var item0 = {
             date,
@@ -56,7 +74,15 @@ var tinhToan = function(){
     }
     
     for (let i = 1; i <= time; i++){
-        // date = parseInt(date.getMonth()) + 1;
+        month = sDate[1]
+        if (month >= 12) {
+            sDate[1] = 1;
+            sDate[2] += 1;
+        } else {
+            sDate[1] += 1;
+        }
+        date = sDate.join('/');
+
         var tienLai = Math.round(moneyConLai * (lai / 100) / 12);
         moneyConLai -= tienTraHangThang; 
         if (moneyConLai < 10) {
