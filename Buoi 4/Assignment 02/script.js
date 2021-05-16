@@ -182,11 +182,7 @@ function Display() {
 
         listproduct += '<td id="indexSTT">' + result[i].i + '</td>';
 
-        if (result[i].moneyConLai) {
-            listproduct += '<td id="indexMoney">' + formatter.format(result[i].moneyConLai) + '</td>';
-        } else {
-            listproduct += '<td>0</td>';
-        }
+        listproduct += '<td id="indexMoney">' + formatter.format(result[i].moneyConLai) + '</td>';
         
         if (result[i].tienTraHangThang) {
             listproduct += '<td id="indexTienTra">' + formatter.format(result[i].tienTraHangThang) + '</td>';
