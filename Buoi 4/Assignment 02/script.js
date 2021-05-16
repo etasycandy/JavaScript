@@ -55,10 +55,30 @@ var tinhToan = function(){
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
     var sDate = [];
+
+    // Định dạng hiển thị ngày (dd)
+    if (day < 10) {
+        day = '0' + day;
+    }
+    // Định dạng hiển thị tháng (mm)
+    if (month < 10) {
+        month = '0' + month;
+    }
+    // Định dạng hiển thị năm (yyyy)
+    if (year < 10) {
+        year = '000' + year;
+    } else if (year < 100) {
+        year = '00' + year;
+    } else if (year < 1000) {
+        year = '0' + year;
+    } else {
+        year = year;
+    }
+
     sDate.push(day, month, year);
 
     // xuất date "dd/mm/yyyy"
-    date = sDate.join('/');
+    var date = sDate.join('/');
 
     var tienTraHangThang = Math.round(money / time);
     var moneyConLai = money;
@@ -74,13 +94,35 @@ var tinhToan = function(){
     }
     
     for (let i = 1; i <= time; i++){
-        month = sDate[1]
+        // xử lý ngày/tháng/năm
+        month = parseInt(sDate[1]);
+        year = parseInt(sDate[2]);
         if (month >= 12) {
-            sDate[1] = 1;
-            sDate[2] += 1;
+            month = 1;
+            year += 1;
         } else {
-            sDate[1] += 1;
+            month += 1;
         }
+
+        // Định dạng hiển thị tháng (mm)
+        if (month < 10) {
+            month = '0' + month;
+        }
+        // Định dạng hiển thị năm (yyyy)
+        if (year < 10) {
+            year = '000' + year;
+        } else if (year < 100) {
+            year = '00' + year;
+        } else if (year < 1000) {
+            year = '0' + year;
+        } else {
+            year = year;
+        }
+
+        sDate[1] = month;
+        sDate[2] = year;
+        
+        // xuất date "dd/mm/yyyy"
         date = sDate.join('/');
 
         var tienLai = Math.round(moneyConLai * (lai / 100) / 12);
@@ -141,7 +183,7 @@ function Display() {
         if (result[i].moneyConLai) {
             listproduct += '<td id="indexMoney">' + formatter.format(result[i].moneyConLai) + '</td>';
         } else {
-            listproduct += '<td></td>';
+            listproduct += '<td>0</td>';
         }
         if (result[i].tienTraHangThang) {
             listproduct += '<td id="indexTienTra">' + formatter.format(result[i].tienTraHangThang) + '</td>';
