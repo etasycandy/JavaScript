@@ -44,8 +44,9 @@ var tinhToan = function(){
         alert("Error! \nVui lòng nhập lãi suất.")
     } else if (document.getElementById("date").value == "") {
         alert("Error! \nVui lòng nhập ngày giải ngân.")
-    } else {
-
+    } else { 
+        // Khi đã nhập đầy đủ thông tin thì cho phép chương trình chạy.
+        
         // Xoá hết dữ liệu cũ
         clearr();
 
