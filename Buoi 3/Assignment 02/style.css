@@ -1,0 +1,74 @@
+.container{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.stroke{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #e3e3e3;
+}
+.container h1{
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.container .weight{
+    padding: 0.5rem 3rem;
+    font-weight: 700;
+    font-size: large;
+    height: 3.2rem;
+}
+.container div .titl{
+    width: 15rem;
+}
+.container .titl .clear{
+    margin-left: 15.5rem;
+}
+.container div input{
+    width: 25rem;
+}
+.container .tinh-toan{
+    padding: 0.3rem 3rem;
+}
+.container .tinh-toan button{
+    padding: 0.4rem 2rem;
+    background-color: brown;
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+}
+.container .tinh-toan button:hover{
+    background-color: #ec171d;
+}
+
+.whiteSmoke{
+    background-color: #fafafa;
+}
+.grey{
+    background-color: #cccccc;
+}
+.cecece{
+    background-color: #ececec;
+}
+
+/* result */
+
+.container table{
+    margin: 0 auto;
+    text-align: center;
+}
+.container table tr th{
+    border: solid #e3e3e3 2px;
+}
+.container table tr td{
+    border: solid #e3e3e3 2px;
+}
+.container table tr th{
+    padding: 0.5rem;
+}
+.container table tr td{
+    padding: 0.5rem;
+}
