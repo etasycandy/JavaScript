@@ -23,27 +23,27 @@ class Student {
 
 
 // Danh sách sinh viên (1)
-var s1 = new Student('Trần Đình Hoàng', 1, 9, 10);
-var s2 = new Student('Nguyễn Thanh Bình', 1, 10, 10);
-var s3 = new Student('Nguyễn Thị Việt Ánh', 0, 0, 0);
-var s4 = new Student('Nguyễn Văn Phước Toàn', 1, 5, 6);
-var s5 = new Student('Trần Thanh Nam', 2, 7, 9);
-var s6 = new Student('Đỗ Thái Dương', 1, 10, 10);
-var s7 = new Student('Dương Trường Thọ', 1, 7, 7);
-var s8 = new Student('Phan Thị Anh', 0, 8, 7);
-var s9 = new Student('Hoàng Thị Thư Thái', 0, 0, 0);
-var s10 = new Student('Lê Quang Thành', 1, 5, 6);
+var student1 = new Student('Trần Đình Hoàng', 1, 9, 10);
+var student2 = new Student('Nguyễn Thanh Bình', 1, 10, 10);
+var student3 = new Student('Nguyễn Thị Việt Ánh', 0, 0, 0);
+var student4 = new Student('Nguyễn Văn Phước Toàn', 1, 5, 6);
+var student5 = new Student('Trần Thanh Nam', 2, 7, 9);
+var student6 = new Student('Đỗ Thái Dương', 1, 10, 10);
+var student7 = new Student('Dương Trường Thọ', 1, 7, 7);
+var student8 = new Student('Phan Thị Anh', 0, 8, 7);
+var student9 = new Student('Hoàng Thị Thư Thái', 0, 0, 0);
+var student10 = new Student('Lê Quang Thành', 1, 5, 6);
 
 // Sửa điểm môn học
-s1.subjects[0].Mark = 10; // sub[0] = Toán
-s1.subjects[1].Mark = 10;  // sub[1] = Lý
+student1.subjects[0].Mark = 10; // sub[0] = Toán
+student1.subjects[1].Mark = 10;  // sub[1] = Lý
 
 
 // Tạo danh sách sinh viên
-var SV = [];
+var listStudent = [];
 
 // Add sinh viên vào SV
-SV.push(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
+listStudent.push(student1, student2, student3, student4, student5, student6, student7, student8, student9, student10);
 
 
 
@@ -51,12 +51,12 @@ SV.push(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
 
 function sortLonBe() {
     // -- Từ lớn đến bé (2)
-    return SV.sort(function(a, b){return b.mark - a.mark});
+    return listStudent.sort(function(a, b){return b.mark - a.mark});
 }
 
 function sortBeLon() {
     // -- Từ bé đến lớn (3)
-    return SV.sort(function(a, b){return a.mark - b.mark});
+    return listStudent.sort(function(a, b){return a.mark - b.mark});
 }
 
 //  Lọc ra danh sách sinh viên là nữ và có điểm tích luỹ lớn hơn 5.0 (4)
@@ -64,9 +64,9 @@ function sinhVienNu() {
     // -- Tạo danh sách sinh viên nữ
     var svNu = [];
     // -- Add các sinh viên nữ có điểm tích luỹ lớn hơn 5.0 từ danh sách SV vào danh sách svNu
-    for (let i = 0; i < SV.length; i++) {
-        if (SV[i].gender == 'Nữ' && SV[i].mark > 5) {
-            svNu.push(SV[i]);
+    for (let i = 0; i < listStudent.length; i++) {
+        if (listStudent[i].gender == 'Nữ' && listStudent[i].mark > 5) {
+            svNu.push(listStudent[i]);
         }
     }
     return svNu;
@@ -77,9 +77,9 @@ function gioiToanLy() {
     // -- Tạo danh sách mới
     var svToanLy = [];
     // -- Add các sinh viên có điểm toán hoặc lý lớn hơn 8.0
-    for (let i = 0; i < SV.length; i++) {
-        if (SV[i].subjects[0].Mark > 8 || SV[i].subjects[1].Mark > 8) {
-            svToanLy.push(SV[i]);
+    for (let i = 0; i < listStudent.length; i++) {
+        if (listStudent[i].subjects[0].Mark > 8 || listStudent[i].subjects[1].Mark > 8) {
+            svToanLy.push(listStudent[i]);
         }
     }
     return svToanLy;
@@ -91,16 +91,16 @@ function markMathMax() {
     var svToanCao = [];
    
     // -- Sắp xết các sinh viên có điểm toán từ lớn đến bé
-    SV.sort(function(a, b){return b.subjects[0].Mark - a.subjects[0].Mark});
+    sortLonBe();
 
     // -- Trường hợp bỏ qua các sinh viên cùng có điểm toán bằng nhau
     // svToanCao.push(SV[0]);
     
 
     // -- Trường hợp lấy tất cả các sinh viên cùng có điểm toán bằng nhau
-    for (let i = 0; i < SV.length; i++) {
-        if (SV[i].subjects[0].Mark == SV[0].subjects[0].Mark) {
-            svToanCao.push(SV[i]);
+    for (let i = 0; i < listStudent.length; i++) {
+        if (listStudent[i].subjects[0].Mark == listStudent[0].subjects[0].Mark) {
+            svToanCao.push(listStudent[i]);
         }
     }
     return svToanCao;
@@ -111,15 +111,15 @@ function markMathMin() {
     var svToanThap = [];
 
     // -- Sắp xết các sinh viên có điểm toán từ lớn đến bé
-    SV.sort(function(a, b){return b.subjects[0].Mark - a.subjects[0].Mark});
+    sortLonBe();
 
     // -- Trường hợp bỏ qua các sinh viên cùng có điểm toán bằng nhau
     // svToanThap.push(SV[9]);
     
     // -- Trường hợp lấy tất cả các sinh viên cùng có điểm toán bằng nhau
-    for (let i = 0; i < SV.length; i++) {
-        if (SV[i].subjects[0].Mark == SV[9].subjects[0].Mark) {
-            svToanThap.push(SV[i]);
+    for (let i = 0; i < listStudent.length; i++) {
+        if (listStudent[i].subjects[0].Mark == listStudent[9].subjects[0].Mark) {
+            svToanThap.push(listStudent[i]);
         }
     }
     return svToanThap;
@@ -130,21 +130,54 @@ function deleteStudent0() {
     // -- Tạo danh sách mới
     var sv0 = [];
     // -- Lưu lại các sinh viên có điểm tích luỹ khác 0 vào mảng sv0
-    for (let i = 0; i < SV.length; i++) {
-        if (SV[i].mark != 0) {
-            sv0.push(SV[i]);
+    for (let i = 0; i < listStudent.length; i++) {
+        if (listStudent[i].mark != 0) {
+            sv0.push(listStudent[i]);
         }
     }
     return sv0;
 }
 
-console.log(sortLonBe()); // sắp xếp từ lớn đến bé;
-console.log(sortBeLon()); // sắp xếp từ bé đến lớn
-console.log(sinhVienNu()); // Print sinh viên Nữ có điểm tích luỹ > 5
-console.log(gioiToanLy()); // Print các sinh viên có điểm toán hoặc lý > 8
-console.log(markMathMax()); // Print sinh viên có điểm toán cao nhất
-console.log(markMathMin()); // Print sinh viên có điểm toán thấp nhất
-console.log(deleteStudent0()); // Xoá các sinh viên có điểm tích luỹ = 0;
+// console.log(sortLonBe()); // sắp xếp từ lớn đến bé;
+// console.log(sortBeLon()); // sắp xếp từ bé đến lớn
+// console.log(sinhVienNu()); // Print sinh viên Nữ có điểm tích luỹ > 5
+// console.log(gioiToanLy()); // Print các sinh viên có điểm toán hoặc lý > 8
+// console.log(markMathMax()); // Print sinh viên có điểm toán cao nhất
+// console.log(markMathMin()); // Print sinh viên có điểm toán thấp nhất
+// console.log(deleteStudent0()); // Xoá các sinh viên có điểm tích luỹ = 0;
 
 
+
+Display()
+// Hiển thị
+function Display() {
+    var  listproduct = "";
+    for (var i = 0; i < listStudent.length; i++) {
+
+        // if (i == 0 || i % 2 == 0) {
+        //     listproduct += '<tr class = "grey">';
+        // } else {
+        //     listproduct += '<tr class = "whiteSmoke">';
+        // }
+
+        listproduct += '<tr>';
+
+        listproduct += '<td id="indexSTT">' + (i+1) + '</td>';
+
+        listproduct += '<td id="indexName">' + listStudent[i].name + '</td>';
+
+        listproduct += '<td id="indexGender">' + listStudent[i].gender + '</td>';
+        
+        listproduct += '<td id="indexMarkMaths">' + listStudent[i].subjects[0].Mark + '</td>';
+
+        listproduct += '<td id="indexMarkPhysical">' + listStudent[i].subjects[1].Mark + '</td>';
+        
+        listproduct += '<td id="indexGPA">' + listStudent[i].mark + '</td>';
+
+        listproduct += '</tr>'; 
+    }
+    document.getElementById("listStudent").innerHTML = listproduct;
+}
+
+document.getElementById("btn-sx").addEventListener("click", sortLonBe());
 

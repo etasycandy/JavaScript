@@ -1,0 +1,37 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+}
+body h1{
+    padding: 1rem;
+    color: green;
+    font-weight: 800;
+}
+
+/* table */
+
+.container table{
+    margin: 0 auto;
+    text-align: center;
+}
+.container table tr th{
+    border: solid #e3e3e3 2px;
+}
+.container table tr td{
+    border: solid #e3e3e3 2px;
+}
+.container table tr th{
+    padding: 0.5rem;
+}
+.container table tr td{
+    padding: 0.5rem;
+}
+
+/* color */
+
+.grey{
+    background-color: #cccccc;
+}
+.cecece{
+    background-color: #ececec;
+}
